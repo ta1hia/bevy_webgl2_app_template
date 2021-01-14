@@ -3,11 +3,14 @@
 ## Prerequisites
 
 ```
-cargo install cargo-make
+nix-shell default.nix
+cargo install cargo-make 
+cargo install wasm-bindgen-cli
 ```
 
 ## Build and serve WASM version
 ```
+cargo build --target wasm32-unknown-unknown --features web
 cargo make serve
 ```
 then point your browser to http://127.0.0.1:4000/
